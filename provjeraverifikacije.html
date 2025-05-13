@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8">
+  <title>Verifikacija korisnika</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    .header {
+      background-color: #e53935;
+      color: white;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      font-size: 18px;
+    }
+
+    .sidebar {
+      width: 230px;
+      background-color: #fff;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      border-right: 1px solid #ddd;
+      padding-top: 80px;
+    }
+
+    .sidebar a {
+      display: block;
+      padding: 15px 20px;
+      text-decoration: none;
+      color: #333;
+      border-left: 4px solid transparent;
+    }
+
+    .sidebar a:hover,
+    .sidebar a.active {
+      background-color: #f0f0f0;
+      border-left: 4px solid #e53935;
+      color: #e53935;
+    }
+
+    .main {
+      margin-left: 250px;
+      padding: 20px;
+    }
+
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .top-bar h2 {
+      margin: 0;
+    }
+
+    .badge {
+      background-color: #e53935;
+      color: white;
+      font-size: 11px;
+      padding: 4px 10px;
+      border-radius: 12px;
+      margin-left: 10px;
+    }
+
+    .tabs {
+      margin-top: 10px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .tabs a {
+      padding: 10px 15px;
+      display: inline-block;
+      text-decoration: none;
+      color: #333;
+      border-bottom: 3px solid transparent;
+      margin-right: 10px;
+    }
+
+    .tabs a.active {
+      color: #e53935;
+      border-bottom: 3px solid #e53935;
+      font-weight: bold;
+    }
+
+    .content {
+      display: flex;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .left-panel {
+      width: 300px;
+      background: white;
+      border-radius: 10px;
+      padding: 15px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+
+    .right-panel {
+      flex: 1;
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .user-item {
+      padding: 12px;
+      border: 1px solid #eee;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
+
+    .user-item:hover {
+      background-color: #f9f9f9;
+    }
+
+    .user-status {
+      float: right;
+      font-size: 12px;
+      padding: 3px 6px;
+      border-radius: 6px;
+    }
+
+    .status-green {
+      background-color: #e0f2f1;
+      color: #00796b;
+    }
+
+    .status-yellow {
+      background-color: #fff8e1;
+      color: #f9a825;
+    }
+
+    .status-red {
+      background-color: #ffebee;
+      color: #d32f2f;
+    }
+
+    .section {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 20px;
+      background-color: #f5fdf7;
+    }
+
+    .section h4 {
+      margin-top: 0;
+      font-size: 16px;
+    }
+
+    .section p {
+      margin: 4px 0;
+      font-size: 14px;
+    }
+
+    .section span.check {
+      float: right;
+      color: green;
+      font-weight: bold;
+    }
+
+    .doc-box {
+      display: flex;
+      gap: 20px;
+      margin-top: 10px;
+    }
+
+    .doc-box div {
+      flex: 1;
+      border: 1px dashed #ccc;
+      padding: 10px;
+      text-align: center;
+      border-radius: 6px;
+      font-size: 13px;
+    }
+
+    .bottom-buttons {
+      display: flex;
+      justify-content: flex-start;
+      gap: 15px;
+      margin-top: auto;
+    }
+
+    .button {
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-size: 14px;
+      border: none;
+      cursor: pointer;
+      color: white;
+    }
+
+    .approve {
+      background-color: #4caf50;
+    }
+
+    .reject {
+      background-color: #f44336;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <strong style="margin-left: 20px;">Crveni krst</strong>
+  </div>
+
+  <div class="sidebar">
+    <a href="#">Početna</a>
+    <a href="#" class="active">Verifikacija</a>
+    <a href="#">Korisnici</a>
+    <a href="#">Zadaci</a>
+    <a href="#">Donacije</a>
+    <div style="border-top: 1px solid #ddd; margin: 10px 0;"></div>
+    <a href="#">Podešavanja</a>
+    <a href="#">Izvještaji</a>
+    <a href="#">Obavještenja</a>
+    <a href="#">Odjava</a>
+  </div>
+
+  <div class="main">
+    <div class="top-bar">
+      <h2>Verifikacija korisnika <span class="badge">12 novih zahtjeva</span></h2>
+    </div>
+
+    <div class="tabs">
+      <a href="#" class="active">Zahtjevi za verifikaciju (12)</a>
+      <a href="#">Verifikovani korisnici (156)</a>
+      <a href="#">Odbijeni zahtjevi (8)</a>
+      <a href="#">Statistika</a>
+    </div>
+
+    <div class="content">
+      <!-- LEFT PANEL -->
+      <div class="left-panel">
+        <div class="user-item">
+          <strong>NP</strong> Nikola Petrović<br>
+          <small>Volonter • Podgorica</small><br>
+          <small>Podnijeto: 15.11.2023, 09:23</small>
+          <div class="user-status status-green">Verifikovan</div>
+        </div>
+        <div class="user-item">
+          <strong>JM</strong> Jelena Marković<br>
+          <small>Volonter • Nikšić</small><br>
+          <small>Podnijeto: 15.11.2023, 10:45</small>
+          <div class="user-status status-yellow">Na čekanju</div>
+        </div>
+        <div class="user-item">
+          <strong>SD</strong> Stefan Đurović<br>
+          <small>Volonter • Bar</small><br>
+          <small>Podnijeto: 15.11.2023, 16:12</small>
+          <div class="user-status status-yellow">Na čekanju</div>
+        </div>
+      </div>
+
+      <!-- RIGHT PANEL -->
+      <div class="right-panel">
+        <div>
+          <h3>Detalji verifikacije</h3>
+          <p><strong>Nikola Petrović</strong> • Volonter • Podgorica</p>
+          <p>ID: #VP-2023-1145 <span class="user-status status-yellow">Na čekanju</span></p>
+          <p>Proces verifikacije: <strong>5/5 koraka</strong></p>
+
+          <div class="section">
+            <h4>1. Osnovni podaci <span class="check">✓</span></h4>
+            <p>Ime i prezime: Nikola Petrović</p>
+            <p>Datum rođenja: 15.06.1992</p>
+            <p>Email: nikola.petrovic@gmail.com</p>
+            <p>Telefon: +382 67 123 456</p>
+            <p>Adresa: Bulevar Svetog Petra Cetinjskog 56, Podgorica</p>
+            <p>Zanimanje: Student</p>
+          </div>
+
+          <div class="section">
+            <h4>2. Verifikacija identiteta <span class="check">✓</span></h4>
+            <p>Broj lične karte: 123456789</p>
+            <p>Datum izdavanja: 10.03.2019</p>
+            <p>Datum isteka: 10.03.2029</p>
+            <p>Izdato od: MUP Crne Gore</p>
+            <div class="doc-box">
+              <div>Pregledaj dokument<br><small>Prednja strana</small></div>
+              <div>Pregledaj dokument<br><small>Zadnja strana</small></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- BOTTOM BUTTONS -->
+        <div class="bottom-buttons">
+          <button class="button approve">Odobri</button>
+          <button class="button reject">Odbij</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

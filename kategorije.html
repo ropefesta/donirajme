@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Odaberi kategoriju pomoći</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-pink-50 font-sans min-h-screen flex flex-col">
+
+  <!-- Gornji bar -->
+  <header class="bg-red-600 text-white py-4 px-6 flex items-center">
+    <div class="text-lg font-bold flex items-center space-x-2">
+      <span class="text-2xl">✚</span>
+      <span>Crveni krst</span>
+    </div>
+  </header>
+
+  <!-- Glavni sadržaj -->
+  <main class="flex-grow p-6 md:p-12 flex flex-col items-center text-center">
+    <h1 class="text-2xl md:text-3xl font-bold text-gray-800 mb-2">Odaberi kategoriju</h1>
+    <p class="text-gray-600 mb-10">Izaberite vrstu donacije koju želite da pružite</p>
+
+    <!-- Forma -->
+    <form action="#" method="POST" class="w-full max-w-5xl">
+
+      <!-- Grid kartica -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+
+        <!-- Kartica (checkbox + label) -->
+        <label class="cursor-pointer">
+          <input type="checkbox" name="kategorija" value="finansije" class="sr-only peer">
+          <div class="bg-white rounded-lg border border-gray-200 p-6 flex flex-col items-center shadow transition-all peer-checked:border-red-500 peer-checked:bg-red-100 hover:shadow-md hover:-translate-y-1">
+            <div class="text-red-500 text-3xl">💰</div>
+            <h2 class="font-semibold mt-2">Finansijska sredstva</h2>
+            <p class="text-gray-500 text-sm">Novčana pomoć za najugroženije</p>
+          </div>
+        </label>
+
+        <label class="cursor-pointer">
+          <input type="checkbox" name="kategorija" value="hrana" class="sr-only peer">
+          <div class="bg-white rounded-lg border border-gray-200 p-6 flex flex-col items-center shadow transition-all peer-checked:border-red-500 peer-checked:bg-red-100 hover:shadow-md hover:-translate-y-1">
+            <div class="text-red-500 text-3xl">🛒</div>
+            <h2 class="font-semibold mt-2">Paketi hrane</h2>
+            <p class="text-gray-500 text-sm">Osnovne namirnice za porodice</p>
+          </div>
+        </label>
+
+        <label class="cursor-pointer">
+          <input type="checkbox" name="kategorija" value="higijena" class="sr-only peer">
+          <div class="bg-white rounded-lg border border-gray-200 p-6 flex flex-col items-center shadow transition-all peer-checked:border-red-500 peer-checked:bg-red-100 hover:shadow-md hover:-translate-y-1">
+            <div class="text-red-500 text-3xl">⚖️</div>
+            <h2 class="font-semibold mt-2">Paketi higijene</h2>
+            <p class="text-gray-500 text-sm">Sredstva za ličnu higijenu</p>
+          </div>
+        </label>
+
+        <label class="cursor-pointer">
+          <input type="checkbox" name="kategorija" value="garderoba" class="sr-only peer">
+          <div class="bg-white rounded-lg border border-gray-200 p-6 flex flex-col items-center shadow transition-all peer-checked:border-red-500 peer-checked:bg-red-100 hover:shadow-md hover:-translate-y-1">
+            <div class="text-red-500 text-3xl">🛡️</div>
+            <h2 class="font-semibold mt-2">Garderoba</h2>
+            <p class="text-gray-500 text-sm">Odjeća i obuća za sve uzraste</p>
+          </div>
+        </label>
+
+        <label class="cursor-pointer">
+          <input type="checkbox" name="kategorija" value="gradjevina" class="sr-only peer">
+          <div class="bg-white rounded-lg border border-gray-200 p-6 flex flex-col items-center shadow transition-all peer-checked:border-red-500 peer-checked:bg-red-100 hover:shadow-md hover:-translate-y-1">
+            <div class="text-red-500 text-3xl">🏗️</div>
+            <h2 class="font-semibold mt-2">Građevinski materijali</h2>
+            <p class="text-gray-500 text-sm">Materijali za obnovu domova</p>
+          </div>
+        </label>
+
+        <label class="cursor-pointer">
+          <input type="checkbox" name="kategorija" value="tehnologija" class="sr-only peer">
+          <div class="bg-white rounded-lg border border-gray-200 p-6 flex flex-col items-center shadow transition-all peer-checked:border-red-500 peer-checked:bg-red-100 hover:shadow-md hover:-translate-y-1">
+            <div class="text-red-500 text-3xl">📱</div>
+            <h2 class="font-semibold mt-2">Tehnologija</h2>
+            <p class="text-gray-500 text-sm">Računari i uređaji za obrazovanje</p>
+          </div>
+        </label>
+
+        <label class="cursor-pointer col-span-full sm:col-span-2 md:col-span-1">
+          <input type="checkbox" name="kategorija" value="drugo" class="sr-only peer">
+          <div class="bg-white rounded-lg border border-gray-200 p-6 flex flex-col items-center shadow transition-all peer-checked:border-red-500 peer-checked:bg-red-100 hover:shadow-md hover:-translate-y-1">
+            <div class="text-red-500 text-3xl">✨</div>
+            <h2 class="font-semibold mt-2">Nešto drugo</h2>
+            <p class="text-gray-500 text-sm">Ostali vidovi pomoći</p>
+          </div>
+        </label>
+
+      </div>
+
+      <!-- Dugme Nastavi -->
+      <a href="opisdonacije.html" type="submit" class="mt-10 bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-8 rounded-full">
+        Nastavi
+      </a>
+    </form>
+  </main>
+
+</body>
+</html>
+

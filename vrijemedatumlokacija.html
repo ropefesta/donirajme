@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8">
+  <title>Zakazivanje preuzimanja</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: auto;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+
+    .header {
+      background-color: #e53935;
+      color: white;
+      padding: 20px;
+      font-size: 20px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .header small {
+      font-size: 14px;
+      display: block;
+      margin-top: 5px;
+    }
+
+    .form-group {
+      padding: 20px;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    input[type="date"],
+    textarea,
+    select {
+      width: 100%;
+      padding: 10px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+
+    textarea {
+      resize: vertical;
+      height: 80px;
+    }
+
+    .info-box {
+      background-color: #e3f2fd;
+      color: #1e88e5;
+      padding: 15px;
+      margin: 20px;
+      border-left: 4px solid #2196f3;
+      font-size: 14px;
+    }
+
+    .button {
+      background-color: #e53935;
+      color: white;
+      border: none;
+      width: calc(100% - 40px);
+      margin: 0 20px 20px;
+      padding: 15px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .button:hover {
+      background-color: #d32f2f;
+    }
+
+    .progress-bar {
+      height: 6px;
+      background-color: #e53935;
+      width: 100%;
+      border-radius: 5px;
+    }
+
+    .progress-container {
+      margin-top: 5px;
+      padding: 0 20px 10px;
+    }
+
+    .step {
+      text-align: center;
+      font-size: 12px;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="header">
+      Zakazivanje preuzimanja
+      <small>Poslednji korak</small>
+    </div>
+
+    <div class="form-group">
+      <p>Dozvolite i mi da pomognemo, unesite datum, vrijeme i lokaciju kako bismo Vas posjetili i preuzeli donaciju</p>
+
+      <label for="datum">Datum preuzimanja</label>
+      <input type="date" id="datum">
+      <small>Izaberite datum kada želite da preuzmemo donaciju.</small>
+
+      <label for="vrijeme">Vrijeme preuzimanja</label>
+      <select id="vrijeme">
+        <option disabled selected>⏰ Izaberite vrijeme</option>
+        <option>08:00 - 10:00</option>
+        <option>10:00 - 12:00</option>
+        <option>12:00 - 14:00</option>
+        <option>14:00 - 16:00</option>
+        <option>16:00 - 18:00</option>
+      </select>
+      <small>Izaberite vrijeme koje vam najviše odgovara.</small>
+
+      <label for="lokacija">Lokacija preuzimanja</label>
+      <input type="text" id="lokacija" placeholder="🧭 Unesite adresu preuzimanja">
+      <small>Unesite tačnu adresu gdje možemo preuzeti vašu donaciju.</small>
+
+      <label for="napomena">Dodatne napomene (opciono)</label>
+      <textarea id="napomena" placeholder="Npr. sprat, interfon, posebne instrukcije..."></textarea>
+
+      <div class="info-box">
+        ℹ️ Naš tim će vas kontaktirati dan prije preuzimanja kako bi potvrdio termin.
+      </div>
+    </div>
+
+    <button class="button" onclick="posalji()"><a href="obavjestenjeuseraodonaciji"> Pošalji donaciju</a></button>
+
+    <div class="progress-container">
+      <div class="progress-bar"></div>
+      <div class="step">Korak 3 od 3</div>
+    </div>
+  </div>
+
+  <script>
+    function posalji() {
+      const datum = document.getElementById("datum").value;
+      const vrijeme = document.getElementById("vrijeme").value;
+      const lokacija = document.getElementById("lokacija").value;
+
+      if (!datum || !vrijeme || !lokacija) {
+        alert("Molimo vas da popunite sve obavezne podatke: datum, vrijeme i lokaciju.");
+        return;
+      }
+
+      alert("Hvala vam! Vaša donacija je uspješno zakazana.");
+      // Ovde možete poslati podatke na backend ako postoji (npr. preko fetch/AJAX)
+    }
+  </script>
+
+</body>
+</html>

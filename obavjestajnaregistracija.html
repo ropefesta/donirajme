@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Status registracije</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+
+  <div class="bg-white rounded-xl shadow-lg max-w-md w-full">
+    <!-- Gornji crveni dio -->
+    <div class="bg-red-600 text-white text-center py-10 rounded-t-xl">
+      <!-- Emoji ikonica kao zamjena za ilustraciju -->
+      <div class="text-6xl mb-4">🧑‍🦰</div>
+      <h2 class="text-2xl font-bold">Hvala na strpljenju!</h2>
+      <p class="text-sm mt-2">Vaša registracija je u obradi</p>
+    </div>
+
+    <!-- Središnji dio -->
+    <div class="px-6 py-6 space-y-6">
+      <!-- Info poruka -->
+      <div class="bg-blue-50 border-l-4 border-blue-500 p-4 text-sm text-blue-700 rounded-md">
+        Budite strpljivi, obavijestićemo Vas kada nalog bude spreman
+      </div>
+
+      <!-- Status verifikacije -->
+      <div class="space-y-2">
+        <h3 class="text-gray-700 font-semibold">Status verifikacije</h3>
+
+        <!-- Progress bar -->
+        <div class="w-full bg-gray-200 rounded-full h-3">
+          <div class="bg-red-600 h-3 rounded-full" style="width: 75%"></div>
+        </div>
+        <p class="text-right text-xs text-gray-500">75%</p>
+
+        <!-- Lista statusa -->
+        <ul class="space-y-2 text-sm">
+          <li class="flex items-center text-green-600">
+            ✅ <span class="ml-2">Dokumenti primljeni</span>
+          </li>
+          <li class="flex items-center text-green-600">
+            ✅ <span class="ml-2">Provjera u toku</span>
+          </li>
+          <li class="flex items-center text-red-500">
+            ⏳ <span class="ml-2">Čekanje na odobrenje</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Dugme -->
+    <div class="px-6 pb-6">
+    
+        <a href="login.html" class="block text-center bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-lg">
+            Završi registraciju
+          </a>
+          
+    
+    </div>
+  </div>
+
+</body>
+</html>

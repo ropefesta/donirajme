@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8">
+  <title>Detalji donacije</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: auto;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+
+    .header {
+      background-color: #e53935;
+      color: white;
+      padding: 20px;
+      font-size: 20px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .form-group {
+      padding: 20px;
+    }
+
+    textarea {
+      width: 100%;
+      padding: 10px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      resize: vertical;
+      height: 100px;
+    }
+
+    .upload-area {
+      margin-top: 15px;
+      border: 2px dashed #ccc;
+      border-radius: 5px;
+      padding: 30px;
+      text-align: center;
+      color: #888;
+    }
+
+    .upload-area:hover {
+      border-color: #999;
+    }
+
+    input[type="file"] {
+      display: none;
+    }
+
+    .info-box {
+      background-color: #e3f2fd;
+      color: #1e88e5;
+      padding: 15px;
+      margin: 20px;
+      border-left: 4px solid #2196f3;
+      font-size: 14px;
+    }
+
+    .button {
+    
+      background-color: #e53935;
+      color: white;
+      border: none;
+      width: calc(100% - 40px);
+      margin: 0 20px 20px;
+      padding: 15px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .button:hover {
+      background-color: #d32f2f;
+    }
+
+    .progress-bar {
+      height: 6px;
+      background-color: #e53935;
+      width: 67%;
+      border-radius: 5px;
+    }
+
+    .progress-container {
+      margin-top: 5px;
+      padding: 0 20px 10px;
+    }
+
+    .step {
+      text-align: center;
+      font-size: 12px;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      Detalji donacije<br>
+      <small style="font-size: 14px;">Opišite donaciju i dodajte fotografiju</small>
+    </div>
+
+    <div class="form-group">
+      <label for="opis">Opis proizvoda</label>
+      <textarea id="opis" placeholder="Opišite šta donirate, u kakvom je stanju, količinu i druge važne detalje..."></textarea>
+      <small>Detaljan opis će pomoći u efikasnoj distribuciji vaše donacije.</small>
+
+      <div class="upload-area" onclick="document.getElementById('fileInput').click();">
+        <p>📷 Kliknite ili prevucite fotografiju</p>
+        <p style="font-size: 12px;">Podržani formati: JPG, PNG</p>
+        <input type="file" id="fileInput" accept="image/jpeg, image/png">
+      </div>
+
+      <small>Fotografija će pomoći u procjeni stanja i vrijednosti donacije.</small>
+    </div>
+
+    <div class="info-box">
+      ℹ️ Vaša donacija će biti pregledana od strane našeg tima prije distribucije.<br>
+      Hvala vam na pomoći!
+    </div>
+
+    <button class="button" ><a href="vrijemedatumlokacija.html"> Nastavi</a></button>
+
+    <div class="progress-container">
+      <div class="progress-bar"></div>
+      <div class="step">Korak 2 od 3</div>
+    </div>
+  </div>
+
+  <script>
+    // Event listener za prikaz imena izabrane slike
+    document.getElementById("fileInput").addEventListener("change", function() {
+      const fileName = this.files[0] ? this.files[0].name : "";
+      if (fileName) {
+        document.querySelector(".upload-area").innerHTML = `<strong>📷 Izabrana fotografija:</strong> ${fileName}`;
+      }
+    });
+  </script>
+</body>
+</html>

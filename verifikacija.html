@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Verifikacija korisnika</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+
+  <div class="bg-white rounded-lg shadow-md w-full max-w-xl">
+    <!-- Header -->
+    <div class="bg-red-600 p-6 text-center">
+      <h1 class="text-white text-2xl font-bold">Verifikacija korisnika</h1>
+      <p class="text-white text-sm mt-1">Molimo vas da učitate sliku vaše lične karte</p>
+    </div>
+
+    <!-- Form -->
+    <form class="p-6 space-y-6">
+      <!-- Prednja strana -->
+      <div>
+        <label class="block text-sm font-semibold text-gray-700 mb-2">Prednja strana lične karte</label>
+        <div class="flex items-center justify-center border-2 border-dashed border-gray-300 rounded-md h-40 bg-gray-50 cursor-pointer">
+          <label class="flex flex-col items-center justify-center w-full h-full">
+            <svg class="w-10 h-10 text-gray-400 mb-2" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5V19a2 2 0 002 2h14a2 2 0 002-2v-2.5M16 3H8a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V5a2 2 0 00-2-2z" />
+            </svg>
+            <span class="text-sm text-gray-600">Kliknite ili prevucite sliku prednje strane lične karte</span>
+            <span class="text-xs text-gray-400">Podržani formati: JPG, PNG</span>
+            <input type="file" class="hidden" accept=".jpg,.jpeg,.png" />
+          </label>
+        </div>
+      </div>
+
+      <!-- Poledina strana -->
+      <div>
+        <label class="block text-sm font-semibold text-gray-700 mb-2">Poledina lične karte</label>
+        <div class="flex items-center justify-center border-2 border-dashed border-gray-300 rounded-md h-40 bg-gray-50 cursor-pointer">
+          <label class="flex flex-col items-center justify-center w-full h-full">
+            <svg class="w-10 h-10 text-gray-400 mb-2" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5V19a2 2 0 002 2h14a2 2 0 002-2v-2.5M16 3H8a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V5a2 2 0 00-2-2z" />
+            </svg>
+            <span class="text-sm text-gray-600">Kliknite ili prevucite sliku poledine lične karte</span>
+            <span class="text-xs text-gray-400">Podržani formati: JPG, PNG</span>
+            <input type="file" class="hidden" accept=".jpg,.jpeg,.png" />
+          </label>
+        </div>
+      </div>
+
+      <!-- Primjer -->
+      <div class="bg-gray-100 p-4 rounded-lg">
+        <label class="block text-sm font-semibold text-gray-700 mb-2">Primjer lične karte</label>
+        <div class="flex space-x-4">
+          <div class="flex flex-col items-center w-1/2 bg-white p-4 rounded-md shadow text-sm text-gray-600">
+            <svg class="w-8 h-8 mb-1 text-gray-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 7h18M3 12h18M3 17h18" />
+            </svg>
+            Prednja
+          </div>
+          <div class="flex flex-col items-center w-1/2 bg-white p-4 rounded-md shadow text-sm text-gray-600">
+            <svg class="w-8 h-8 mb-1 text-gray-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 7h18M3 12h18M3 17h18" />
+            </svg>
+            Poledina
+          </div>
+        </div>
+      </div>
+
+      <!-- Dugme -->
+      <a href="obavjestajnaregistracija.html" class="block text-center bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-lg">
+        Potvrdi
+      </a>
+    </form>
+  </div>
+
+</body>
+</html>

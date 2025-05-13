@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8">
+  <title>Koordinator - Početna</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f4f4;
+    }
+
+    .header {
+      background-color: #e53935;
+      color: white;
+      text-align: center;
+      padding: 30px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 50px auto;
+      text-align: center;
+    }
+
+    .button-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .card-button {
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 30px;
+      width: 250px;
+      transition: transform 0.2s, box-shadow 0.2s;
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .card-button:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    }
+
+    .card-button i {
+      font-size: 40px;
+      color: #e53935;
+      margin-bottom: 15px;
+    }
+
+    .card-button h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .card-button p {
+      font-size: 14px;
+      color: #555;
+    }
+
+    @media (max-width: 768px) {
+      .card-button {
+        width: 80%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    Dobrodošli, Koordinatore!
+  </div>
+
+  <div class="container">
+    <div class="button-grid">
+
+      <a href="pregleddonacija.html" class="card-button">
+        <i class="fas fa-box-open"></i>
+        <h3>Pregled donacija</h3>
+        <p>Vidi sve primljene i čekajuće donacije.</p>
+      </a>
+
+      <a href="dodjeljivanjezadataka.html" class="card-button">
+        <i class="fas fa-tasks"></i>
+        <h3>Dodjeljivanje zadataka</h3>
+        <p>Dodijeli donacije volonterima ili kuririma.</p>
+      </a>
+
+      <a href="provjeraverifikacije.html" class="card-button">
+        <i class="fas fa-check-circle"></i>
+        <h3>Verifikacija</h3>
+        <p>Verifikuj i odobri prijavljene donacije.</p>
+      </a>
+
+    </div>
+  </div>
+
+</body>
+</html>
